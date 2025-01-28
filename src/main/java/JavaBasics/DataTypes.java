@@ -1,8 +1,8 @@
-public class HelloWorld {
+package JavaBasics;
+
+public class DataTypes {
 
     public static void main(String[] args) {
-
-
 
         double a= 18.5;
         double b = 45.5;
