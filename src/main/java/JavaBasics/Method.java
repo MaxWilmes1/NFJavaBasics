@@ -34,6 +34,7 @@ public class Method {
         System.out.println(result);
 
     }
+
     static int add (int num1, int num2){
         System.out.println("Addiere " + num1 + " mit " + num2);
         return num1 + num2;
@@ -49,6 +50,9 @@ public class Method {
         return num1 - num2;
     }
 
+    /// Nimmt den Input (int) und gibt den positiven Weert zurück
+    /// @param num
+    /// @return num
     static int makePositive(int num){
         System.out.println("Make " + num + " positive");
         if (num >= 0){

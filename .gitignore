@@ -11,6 +11,8 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/
+pom.xml
 
 ### Eclipse ###
 .apt_generated
@@ -37,5 +39,3 @@ build/
 ### Mac OS ###
 .DS_Store
 
-.idea/
-pom.xml
