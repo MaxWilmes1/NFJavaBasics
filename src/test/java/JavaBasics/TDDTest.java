@@ -16,4 +16,15 @@ public class TDDTest {
         Assertions.assertEquals(expected,actual);
     }
 
+    @Test
+    void expect2__whenGivenNumber2(){
+        // Given
+        int number = 2;
+        // When
+        String actual = TDD.FizzBuzz(number);
+        // Then
+        String expected = "2";
+        Assertions.assertEquals(expected,actual);
+    }
+
 }
