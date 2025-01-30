@@ -2,28 +2,28 @@ package JavaBasics;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class FibonacciTest {
 
-    @Test
-    void given1_then0 (){
-        int number = 1;
-        int expected = 0;
-        int actual = Fibonacci.getFibonacciNumber(number);
+    @ParameterizedTest
+    @CsvSource({
+            "1,0",
+            "2,1",
+            "3,1",
+            "4,2",
+            "5,3",
+            "6,5",
+            "7,8",
+            "8,13",
+            "9,21",
+            "47,1836311903",
+            "93,7540113804746346429"
+    })
+    void fibonacciTest (long number, long expected){
+        long actual = Fibonacci.getFibonacciNumber(number);
         Assertions.assertEquals(expected, actual);
     }
-    @Test
-    void given2_then1 (){
-        int number = 2;
-        int expected = 1;
-        int actual = Fibonacci.getFibonacciNumber(number);
-        Assertions.assertEquals(expected, actual);
-    }
-    @Test
-    void given3_then1 (){
-        int number = 3;
-        int expected = 1;
-        int actual = Fibonacci.getFibonacciNumber(number);
-        Assertions.assertEquals(expected, actual);
-    }
+
 }
