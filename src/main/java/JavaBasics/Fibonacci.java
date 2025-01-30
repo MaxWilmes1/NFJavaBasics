@@ -8,7 +8,7 @@ public class Fibonacci {
 
     public static int getFibonacciNumber(int number) {
 
-        return 0;
+        return number-1;
 
     }
 }
