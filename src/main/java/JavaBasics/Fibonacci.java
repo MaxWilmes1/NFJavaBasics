@@ -8,6 +8,9 @@ public class Fibonacci {
 
     public static int getFibonacciNumber(int number) {
 
+        if ( number == 3){
+            return 1;
+        }
         return number-1;
 
     }

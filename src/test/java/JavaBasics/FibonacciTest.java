@@ -19,4 +19,11 @@ public class FibonacciTest {
         int actual = Fibonacci.getFibonacciNumber(number);
         Assertions.assertEquals(expected, actual);
     }
+    @Test
+    void given3_then1 (){
+        int number = 3;
+        int expected = 1;
+        int actual = Fibonacci.getFibonacciNumber(number);
+        Assertions.assertEquals(expected, actual);
+    }
 }
