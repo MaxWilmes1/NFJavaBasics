@@ -2,20 +2,27 @@ package JavaBasics;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class TDDTest {
 
-    @Test
-    void expect1__whenGivenNumber1(){
-        // Given
-        int number = 1;
-        // When
+    @ParameterizedTest
+    @CsvSource({
+            "1,1",
+            "2,2",
+            "3,Fizz",
+            "4,4",
+            "5,Buzz",
+            "6,Fizz",
+            "15,FizzBuzz"
+
+    })
+    void testFizzBuzz(int number, String expected ){
         String actual = TDD.FizzBuzz(number);
-        // Then
-        String expected = "1";
         Assertions.assertEquals(expected,actual);
     }
-
+/*
     @Test
     void expect2_whenGivenNumber2(){
         // Given
@@ -68,6 +75,6 @@ public class TDDTest {
         // Then
         String expected = "FizzBuzz";
         Assertions.assertEquals(expected,actual);
-    }
+    }*/
 
 }
