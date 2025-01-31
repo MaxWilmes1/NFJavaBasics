@@ -43,6 +43,7 @@ jobs:
     needs: build-jar-file
     steps:
       - uses: actions/checkout@v4
+      - run: ls -la
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
@@ -50,4 +51,4 @@ jobs:
           ignore-unfixed: true
           format: 'table'
           exit-code: 1
-          severity: 'CRITICAL,HIGH'
+          severity: 'UNKNOWN,LOW,MEDIUM,HIGH,CRITICAL'
