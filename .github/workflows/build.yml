@@ -40,7 +40,7 @@ jobs:
 
   sca-scan-trivy:
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-jar-file
     steps:
       - uses: actions/checkout@v4
       - name: Run Trivy vulnerability scanner
