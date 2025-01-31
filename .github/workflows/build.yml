@@ -43,12 +43,11 @@ jobs:
       needs: build
       steps:
         - uses: actions/checkout@v4
-        # Installiere und führe den Trivy-Scan für das Repository aus
         - name: Run Trivy vulnerability scanner
-          uses: aquasecurity/trivy-action@master
+        - uses: aquasecurity/trivy-action@master
           with:
-            scan-type: 'fs'  # Scan das Filesystem (Code & Abhängigkeiten)
+            scan-type: 'fs'
             ignore-unfixed: true
             format: 'table'
-            exit-code: 1  # Falls Schwachstellen gefunden werden, schlägt der Job fehl
-            severity: 'CRITICAL,HIGH'  # Prüft nur kritische & hohe Schwachstellen
+            exit-code: 1
+            severity: 'CRITICAL,HIGH'
