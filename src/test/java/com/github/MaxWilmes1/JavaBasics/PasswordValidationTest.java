@@ -1,5 +1,6 @@
-package JavaBasics;
+package com.github.MaxWilmes1.JavaBasics;
 
+import com.github.MaxWilmes1.JavaBasics.PasswordValidation;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -66,7 +67,7 @@ public class PasswordValidationTest {
         Assertions.assertEquals(expected,actual);
     }
     @Test
-    void givenOnlyUppercase_expectfalse (){
+    void givenOnlyUppercase_expectFalse (){
         // Given
         String password = "ABCDEF";
         // When
@@ -76,12 +77,22 @@ public class PasswordValidationTest {
         Assertions.assertEquals(expected,actual);
     }
     @Test
-    void givenOUpperAndLowercase_expecttrue (){
+    void givenUpperAndLowercase_expectTrue (){
         // Given
         String password = "ABCDEFcf";
         // When
         boolean expected = true;
         boolean actual = PasswordValidation.validatePasswordCase(password);
+        // Then
+        Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void givenCommonlyUsedPassword_expectFalse (){
+        // Given
+        String password = "ABCDEFHG123";
+        // When
+        boolean expected = false;
+        boolean actual = PasswordValidation.validatePasswordCommenlyUsed(password);
         // Then
         Assertions.assertEquals(expected,actual);
     }

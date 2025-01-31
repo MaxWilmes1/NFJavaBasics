@@ -1,5 +1,6 @@
-package JavaBasics;
+package com.github.MaxWilmes1.JavaBasics;
 
+import com.github.MaxWilmes1.JavaBasics.PlayerCharacter;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

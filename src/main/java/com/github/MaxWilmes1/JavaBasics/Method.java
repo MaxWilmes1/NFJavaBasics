@@ -1,4 +1,4 @@
-package JavaBasics;
+package com.github.MaxWilmes1.JavaBasics;
 
 public class Method {
     public static void main(String[] args){

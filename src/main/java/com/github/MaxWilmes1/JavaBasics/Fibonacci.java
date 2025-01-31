@@ -1,4 +1,4 @@
-package JavaBasics;
+package com.github.MaxWilmes1.JavaBasics;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
