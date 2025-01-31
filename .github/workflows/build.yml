@@ -1,0 +1,15 @@
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          java-version: "23"
+          distribution: "temurin"
+          cache: 'maven'
+      - run: echo $GITHUB_ACTOR
+      - run: echo $GITHUB_TOKEN
+      - run: cat /home/runner/.m2/settings.xml
+      - run: mvn package --batch-mode
