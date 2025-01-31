@@ -2,7 +2,6 @@ on: push
 
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -36,13 +35,22 @@ jobs:
           java-version: "23"
           distribution: "temurin"
           cache: 'maven'
-      - run: mvn test --batch-mode
+      - run: mvn package --batch-mode
+      - name: Upload Build Artifact (target)
+      - uses: actions/upload-artifact@v4
+        with:
+          name: build-artifact
+          path: target/
 
   sca-scan-trivy:
     runs-on: ubuntu-latest
     needs: build-jar-file
     steps:
       - uses: actions/checkout@v4
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: build-artifact
       - run: ls -la
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
