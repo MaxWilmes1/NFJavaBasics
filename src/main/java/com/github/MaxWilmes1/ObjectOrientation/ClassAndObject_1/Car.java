@@ -2,7 +2,7 @@ package com.github.MaxWilmes1.ObjectOrientation.ClassAndObject_1;
 
 import java.util.Objects;
 
-public class Car {
+public class Car implements CanStartEngine {
     public static final String store = "Max Car Shop";
 
     int numberOfTires;
@@ -71,5 +71,10 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(numberOfTires, numberOfDoors, seatBelt, airbag);
+    }
+
+    @Override
+    public String startEngine() {
+        return "Engine goes wwwhhh, wwwwwwwhhhhh, wwwwwhhhhhhhuuuuuuuuuu";
     }
 }

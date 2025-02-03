@@ -9,8 +9,7 @@ public class Main {
         Piano piano = new Piano();
         Spoon spoon = new Spoon();
 
-
-        recordStudio(spoon);
+        recordStudio(piano);
 
     }
 

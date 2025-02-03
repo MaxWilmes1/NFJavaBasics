@@ -10,11 +10,19 @@ public class Main {
         printCar(car1);
         printCar(car2);
         printCar(quad1);
+
+        startEngine(quad1);
     }
 
     public static void printCar(Car car) {
         System.out.println(car);
 //        System.out.println("The car has "+ car.numberOfTires +" tires, "+ car.numberOfDoors+ " doors, seatbelt is "+car.seatBelt+ " and airbag is "+ car.airbag);
 
+    }
+
+    public static void startEngine (CanStartEngine sound){
+        System.out.println("Starting engine...");
+        System.out.println(sound.startEngine());
+        System.out.println("Engine started successfully! :)");
     }
 }
