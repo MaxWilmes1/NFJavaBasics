@@ -16,6 +16,7 @@ public class Quad extends Car{
                 ", numberOfDoors=" + numberOfDoors +
                 ", seatBelt=" + seatBelt +
                 ", airbag=" + airbag +
+                ", store=" + store +
                 '}';
     }
 }

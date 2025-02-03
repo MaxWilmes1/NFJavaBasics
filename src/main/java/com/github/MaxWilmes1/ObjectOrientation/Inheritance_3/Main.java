@@ -23,6 +23,7 @@ public class Main {
         print(violin);
         print(guitar);
         print(epiano);
+//        System.out.println(Instrument.store);
     }
 
     public static void print(Instrument instrument){

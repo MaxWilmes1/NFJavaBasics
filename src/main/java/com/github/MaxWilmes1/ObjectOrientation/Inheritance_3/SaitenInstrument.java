@@ -9,6 +9,7 @@ public class SaitenInstrument extends Instrument{
                 "saiten=" + saiten +
                 ", brand='" + brand + '\'' +
                 ", price=" + price +
+                ", store=" + store +
                 '}';
     }
 }

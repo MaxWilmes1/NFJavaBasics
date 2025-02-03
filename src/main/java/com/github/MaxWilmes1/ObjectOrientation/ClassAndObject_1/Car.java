@@ -3,6 +3,7 @@ package com.github.MaxWilmes1.ObjectOrientation.ClassAndObject_1;
 import java.util.Objects;
 
 public class Car {
+    public static final String store = "Max Car Shop";
 
     int numberOfTires;
     int numberOfDoors;
@@ -56,6 +57,7 @@ public class Car {
                 ", numberOfDoors=" + numberOfDoors +
                 ", seatBelt=" + seatBelt +
                 ", airbag=" + airbag +
+                ", store=" + store +
                 '}';
     }
 
