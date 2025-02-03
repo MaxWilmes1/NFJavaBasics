@@ -5,7 +5,7 @@ public class Main {
 
         Car car1 = new Car(5, 4, true, true);
         Car car2 = new Car(2, 3, false, false);
-        Quad quad1 = new Quad(0, 4, false, false, 2);
+        Car quad1 = new Quad(0, 4, false, false, 2);
 
         printCar(car1);
         printCar(car2);
