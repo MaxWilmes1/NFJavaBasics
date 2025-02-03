@@ -10,7 +10,7 @@ public class Car implements CanStartEngine {
     boolean seatBelt;
     boolean airbag;
 
-    public Car(int numberOfDoors, int numberOfTires, boolean seatBelt, boolean airbag){
+    public Car (int numberOfDoors, int numberOfTires, boolean seatBelt, boolean airbag){
         System.out.println("Create new Object of class car!");
         this.numberOfDoors = numberOfDoors;
         this.numberOfTires = numberOfTires;
