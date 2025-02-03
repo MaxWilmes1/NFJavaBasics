@@ -28,7 +28,7 @@ public class Fibonacci {
                 }
                 break; // Korrekte Eingabe → Schleife verlassen
 
-            } catch (InputMismatchException e) {
+            } catch (InputMismatchException error) {
                 System.out.println("Fehler: Bitte gib eine gültige Zahl ein.");
                 scanner.nextLine(); // Verhindert Endlosschleife bei falschen Eingaben (z. B. Buchstaben)
             }

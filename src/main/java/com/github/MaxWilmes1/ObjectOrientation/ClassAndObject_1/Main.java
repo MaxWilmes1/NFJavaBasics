@@ -1,0 +1,19 @@
+package com.github.MaxWilmes1.ObjectOrientation.ClassAndObject_1;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Car car1 = new Car(5, 4, true, true);
+        Car car2 = new Car(2, 3, false, false);
+
+
+        printCar(car1);
+        printCar(car2);
+    }
+
+    public static void printCar(Car car) {
+        System.out.println(car);
+//        System.out.println("The car has "+ car.numberOfTires +" tires, "+ car.numberOfDoors+ " doors, deatbelt is "+car.seatBelt+ " and airbag is "+ car.airbag);
+
+    }
+}
