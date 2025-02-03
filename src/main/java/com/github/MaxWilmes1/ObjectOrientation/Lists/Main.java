@@ -2,7 +2,9 @@ package com.github.MaxWilmes1.ObjectOrientation.Lists;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.SimpleTimeZone;
+
+
+//Listen haben eine feste Reihenfolge, über die iteriert werden kann. Werte können mehrfach vorkommen
 
 public class Main {
     public static void main(String[] args) {
