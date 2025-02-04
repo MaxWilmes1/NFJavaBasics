@@ -22,19 +22,21 @@ public class Main {
 
         System.out.println("---------add new book via add Book method-----------");
 
-        ScienceFictionLibrary = ScienceFictionLibrary.addBook(DerHerrDerRingeDerHobbit);
+        ScienceFictionLibrary.addBook(DerHerrDerRingeDerHobbit);
 
         System.out.println(ScienceFictionLibrary);
+
 
         System.out.println("---------remove a book via add Book method-----------");
 
-        ScienceFictionLibrary = ScienceFictionLibrary.removeBook(DerHerrDerRinge1);
+        ScienceFictionLibrary.removeBook(DerHerrDerRinge1);
 
         System.out.println(ScienceFictionLibrary);
 
+
         System.out.println("---------remove another book via add Book method-----------");
 
-        ScienceFictionLibrary = ScienceFictionLibrary.removeBook(DerHerrDerRinge2);
+        ScienceFictionLibrary.removeBook(DerHerrDerRinge2);
 
         System.out.println(ScienceFictionLibrary);
     }

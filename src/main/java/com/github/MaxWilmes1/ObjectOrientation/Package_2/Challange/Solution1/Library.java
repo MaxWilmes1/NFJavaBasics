@@ -37,33 +37,30 @@ public class Library {
                 '}';
     }
 
-    public Library addBook(Book book){
+    public void addBook(Book newBook){
         // Neues Array mit zusätzlichem Platz für das neue Buch und Inhalt des originals
-        Book[] newBooks = Arrays.copyOf(this.books, this.books.length + 1);
+        Book[] newBooks = Arrays.copyOf(books, books.length + 1);
 
         // Neues Buch wird an den letzen Platz angehangen
-        newBooks[newBooks.length - 1] = book;
+        newBooks[books.length] = newBook;
 
-        //Neue Library mit aktualisiertem Bücherbestand zurückgeben
-        Library NewLibrary = new Library(newBooks);
-        return NewLibrary;
+        // weise neues Array zu
+        books = newBooks;
+
     }
 
-    public Library removeBook(Book book){
+    public void removeBook(Book bookToRemove){
         Book[] newBooks = new Book[books.length - 1];
 
         int newIndexOfBook = 0; // Wird benötigt, da in der neuen Library sonst ein Platz mit dem gelöschtem Buch leer bleibt
-        for (int i = 0; i < books.length; i++){
-            if (books[i].equals(book)){
-                continue;
-            } else {
-                newBooks[newIndexOfBook] = books[i];
+        for (Book book : books) {
+            if (!book.equals(bookToRemove)) {
+                newBooks[newIndexOfBook] = book;
                 newIndexOfBook++;
             }
         }
 
-        //Neue Library mit aktualisiertem Bücherbestand zurückgeben
-        Library NewLibrary = new Library(newBooks);
-        return NewLibrary;
+        // Neue Library mit aktualisiertem Bücherbestand zurückgeben
+        books = newBooks;
     }
 }
