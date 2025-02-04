@@ -44,5 +44,18 @@ public class WithClassAnimal {
         for (Animal animal : animalsFed){
             System.out.println("Favorite food of "+animal+" is "+favoriteFood.get(animal));
         }
+
+
+        System.out.println("-------Hashmap with Objects as Keys--------");
+
+        HashMap<Integer, Animal> sortedAnimals = new HashMap<>();
+        sortedAnimals.put(0, dog);
+        sortedAnimals.put(1, cat);
+        sortedAnimals.put(2, bird);
+        sortedAnimals.put(2, dog);
+
+        for (int i = 0; i < sortedAnimals.size(); i++) {
+            System.out.println(sortedAnimals.get(i).getName());
+        }
     }
 }
