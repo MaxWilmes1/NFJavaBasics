@@ -11,6 +11,12 @@ public class VehicleTest {
         Vehicle expected = new Vehicle("VW", "Golf", 2002);
         Vehicle actual = new Vehicle("VW", "Golf", 2002);
         Assertions.assertEquals(expected,actual);
+    }
+    @Test
+    void given2EqualVehicls_thenFalse(){
 
+        Vehicle unexpected = new Vehicle("VW", "Golf4", 2002);
+        Vehicle actual = new Vehicle("VW", "Golf", 2002);
+        Assertions.assertNotEquals(unexpected,actual);
     }
 }
