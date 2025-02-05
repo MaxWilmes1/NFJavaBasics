@@ -1,0 +1,16 @@
+package com.github.MaxWilmes1.ObjectOrientation.Inheritance_3.Challange;
+
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
+public class VehicleTest {
+
+    @Test
+    void given2EqualVehicls_thenTrue(){
+
+        Vehicle expected = new Vehicle("VW", "Golf", 2002);
+        Vehicle actual = new Vehicle("VW", "Golf", 2002);
+        Assertions.assertEquals(expected,actual);
+
+    }
+}
