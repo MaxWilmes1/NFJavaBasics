@@ -3,9 +3,9 @@ package com.github.MaxWilmes1.ObjectOrientation.Inheritance_3.Challange;
 import java.util.Objects;
 
 public class Vehicle {
-    private String manufacturer;
-    private String model;
-    private int YearOfManufacture;
+    protected String manufacturer;
+    protected String model;
+    protected int YearOfManufacture;
 
     public Vehicle() {
     }

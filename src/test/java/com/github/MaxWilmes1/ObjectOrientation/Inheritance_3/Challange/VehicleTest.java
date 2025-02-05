@@ -19,4 +19,40 @@ public class VehicleTest {
         Vehicle actual = new Vehicle("VW", "Golf", 2002);
         Assertions.assertNotEquals(unexpected,actual);
     }
+
+    @Test
+    void getManufacturer() {
+    }
+
+    @Test
+    void setManufacturer() {
+    }
+
+    @Test
+    void getModel() {
+    }
+
+    @Test
+    void setModel() {
+    }
+
+    @Test
+    void getYearOfManufacture() {
+    }
+
+    @Test
+    void setYearOfManufacture() {
+    }
+
+    @Test
+    void testEquals() {
+    }
+
+    @Test
+    void testHashCode() {
+    }
+
+    @Test
+    void testToString() {
+    }
 }
