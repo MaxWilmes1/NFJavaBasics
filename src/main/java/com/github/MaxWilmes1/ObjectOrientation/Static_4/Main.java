@@ -1,33 +1,26 @@
 package com.github.MaxWilmes1.ObjectOrientation.Static_4;
 
 public class Main {
-    static int totalCount = 0;
-    private int instanceCount = 0;
-
     public static void main(String[] args) {
-        Main o1 = new Main();
-        Main o2 = new Main();
-        Main o3 = new Main();
 
-        o1.incrementInstanceCount();
-        incrementTotalCount();
-        System.out.println(o1);
-        System.out.println(totalCount);
+
+        Student s1 = new Student();
+        System.out.println();
+        System.out.println("Totalcount: " + Student.getTotalCount());
+        Student s2 = new Student();
+        System.out.println("Instance count: " + s2.getInstanceCount());
+        System.out.println("Total count :" + Student.getTotalCount());
+
+        System.out.println(s1);
+
+        System.out.println(Calculator.add(2, 3));
+        System.out.println(Calculator.subtract(2, 3));
+        System.out.println(Calculator.multiply(2, 3));
+        System.out.println(Calculator.divide(2, 3));
+        System.out.println(Calculator.surfaceOfCircle(42));
+
+        System.out.println(Calculator.getPi());
 
     }
 
-    public static int incrementTotalCount(){
-        return totalCount++;
-    }
-
-    public int incrementInstanceCount(){
-        return instanceCount++;
-    }
-
-    @Override
-    public String toString() {
-        return "Main{" +
-                "instanceCount=" + instanceCount +
-                '}';
-    }
 }
