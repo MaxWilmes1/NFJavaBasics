@@ -20,6 +20,8 @@ public class Main {
         System.out.println(Calculator.surfaceOfCircle(42));
 
         System.out.println(Calculator.getPi());
+        System.out.println(Math.sqrt(5));
+
 
     }
 
