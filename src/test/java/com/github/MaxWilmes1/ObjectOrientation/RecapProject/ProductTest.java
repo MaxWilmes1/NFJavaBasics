@@ -18,7 +18,7 @@ class ProductTest {
     }
 
     @Test
-    void given_StoreWith2Entries_whenRemove1_then2InStore(){
+    void given_StoreWith2Entries_whenGet1Product_then2InStore(){
         ProductRepo myStore = new ProductRepo(new ArrayList<>());
         int expected = 1;
         myStore.add(new Product("apple", 10));
