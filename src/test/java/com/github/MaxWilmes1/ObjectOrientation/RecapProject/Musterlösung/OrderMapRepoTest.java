@@ -1,4 +1,4 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
 
 import org.junit.jupiter.api.Test;
 

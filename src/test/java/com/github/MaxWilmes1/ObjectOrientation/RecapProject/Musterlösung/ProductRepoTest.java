@@ -1,9 +1,8 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
 
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;

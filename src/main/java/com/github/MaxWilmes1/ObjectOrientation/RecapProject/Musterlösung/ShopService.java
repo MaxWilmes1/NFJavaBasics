@@ -1,4 +1,4 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,8 +6,8 @@ import java.util.UUID;
 
 public class ShopService {
 
-    private final ProductRepo productRepo = new ProductRepo();
-    private final OrderRepo orderRepo = new OrderMapRepo();
+    private ProductRepo productRepo = new ProductRepo();
+    private OrderRepo orderRepo = new OrderMapRepo();
 
     public Order addOrder(List<String> productIds){
         List<Product> orderedProducts = new ArrayList<>();
