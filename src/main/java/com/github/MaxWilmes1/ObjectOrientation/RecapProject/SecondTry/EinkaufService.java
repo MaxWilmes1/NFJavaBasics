@@ -7,6 +7,7 @@ import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung
 import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.Produkt;
 import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.ProduktRepo;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -17,7 +18,7 @@ public class EinkaufService {
 
     public Bestellung erstellBestellung(List<String> produktIds){
         List<Produkt> bestellteProdukte = new ArrayList<>();
-        double total = 0;
+        BigDecimal total = new BigDecimal("0");
 
         for (String produktId : produktIds) {
             Produkt bestelltesProdukt = produktRepo.getProductById(produktId);
@@ -26,7 +27,7 @@ public class EinkaufService {
                 return null;
             }
             bestellteProdukte.add(produktRepo.getProductById(produktId));
-            total += bestelltesProdukt.price();
+            total = total.add(bestelltesProdukt.price());
         }
 
         Bestellung newBestellung = new Bestellung(UUID.randomUUID().toString(), bestellteProdukte, total);
