@@ -18,7 +18,7 @@ class EinkaufServiceTest {
         EinkaufService plattform = new EinkaufService();
         ProduktRepo meineWare = new ProduktRepo();
         Produkt p1 = new Produkt("1", "banane", 4.1);
-        Produkt p2 = new Produkt("2", "apple", 4.1);
+        Produkt p2 = new Produkt("2", "apple", 3.5);
         meineWare.addProduct(p1);
         meineWare.addProduct(p2);
         plattform.setProduktRepo(meineWare);
@@ -30,8 +30,9 @@ class EinkaufServiceTest {
         //WHEN
         Bestellung actual = plattform.erstellBestellung(bestellteProdukte);
         //THEN
-        Bestellung expected = new Bestellung("-1", List.of(new Produkt("1", "banane", 4.1), new Produkt("2", "apple", 4.1)));
+        Bestellung expected = new Bestellung("-1", List.of(new Produkt("1", "banane", 4.1), new Produkt("2", "apple", 3.5)), 7.6);
         assertEquals(actual.bestellteProdukte(),expected.bestellteProdukte());
+        assertEquals(actual.total(),expected.total());
     }
     @Test
     void erstellBestellung_whenInvalidProductId_thenNull() {

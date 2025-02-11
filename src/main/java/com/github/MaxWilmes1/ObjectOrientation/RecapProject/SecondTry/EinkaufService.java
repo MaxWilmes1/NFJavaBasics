@@ -17,6 +17,7 @@ public class EinkaufService {
 
     public Bestellung erstellBestellung(List<String> produktIds){
         List<Produkt> bestellteProdukte = new ArrayList<>();
+        double total = 0;
 
         for (String produktId : produktIds) {
             Produkt bestelltesProdukt = produktRepo.getProductById(produktId);
@@ -25,10 +26,12 @@ public class EinkaufService {
                 return null;
             }
             bestellteProdukte.add(produktRepo.getProductById(produktId));
+            total += bestelltesProdukt.price();
         }
 
-        Bestellung newBestellung = new Bestellung(UUID.randomUUID().toString(), bestellteProdukte);
+        Bestellung newBestellung = new Bestellung(UUID.randomUUID().toString(), bestellteProdukte, total);
         bestellungRepo.addBestellung(newBestellung);
+        System.out.println("Ihre Bestellung: " + newBestellung);
         return newBestellung;
     }
 

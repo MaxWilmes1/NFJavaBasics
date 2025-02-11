@@ -6,6 +6,7 @@ import java.util.List;
 
 public record Bestellung(
         String id,
-        List<Produkt> bestellteProdukte
+        List<Produkt> bestellteProdukte,
+        double total
 ) {
 }
