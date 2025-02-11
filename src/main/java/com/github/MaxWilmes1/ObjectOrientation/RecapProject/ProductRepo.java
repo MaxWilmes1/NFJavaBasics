@@ -10,6 +10,10 @@ public class ProductRepo {
         this.products = products;
     }
 
+    public void add(Product product) {
+        this.products.add(product);
+    }
+
     public List<Product> getProducts() {
         return products;
     }
@@ -36,4 +40,6 @@ public class ProductRepo {
                 "products=" + products +
                 '}';
     }
+
+
 }
