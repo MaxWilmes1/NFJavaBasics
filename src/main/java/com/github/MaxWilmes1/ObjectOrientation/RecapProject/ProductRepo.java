@@ -1,48 +1,40 @@
 package com.github.MaxWilmes1.ObjectOrientation.RecapProject;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 public class ProductRepo {
-    List<Product> products;
+    private List<Product> products;
 
-    public ProductRepo(List<Product> products) {
-        this.products = products;
-    }
-
-    public void add(Product product) {
-        this.products.add(product);
-    }
-
-    public void remove(String product) {
-        this.products.removeIf(p -> Objects.equals(p.type(), product));
+    public ProductRepo() {
+        products = new ArrayList<>();
+        products.add(new Product("1", "apple"));
     }
 
     public List<Product> getProducts() {
         return products;
     }
 
-    public void setProducts(List<Product> products) {
-        this.products = products;
+    public Product getProductById(String id){
+        for (Product product : products) {
+            if ( product.id().equals(id) ){
+                return product;
+            }
+        }
+        return null;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        ProductRepo that = (ProductRepo) o;
-        return Objects.equals(products, that.products);
+    public Product addProduct(Product newProduct){
+        products.add(newProduct);
+        return newProduct;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(products);
+    public void removeProductById(String id){
+        for (Product product : products) {
+            if ( product.id().equals(id) ){
+                products.remove(product);
+                return;
+            }
+        }
     }
-
-    @Override
-    public String toString() {
-        return "ProductRepo{" +
-                "products=" + products +
-                '}';
-    }
-
 }
