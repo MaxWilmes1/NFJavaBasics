@@ -14,6 +14,10 @@ public class ProductRepo {
         this.products.add(product);
     }
 
+    public void remove(String product) {
+        this.products.removeIf(p -> Objects.equals(p.type(), product));
+    }
+
     public List<Product> getProducts() {
         return products;
     }
@@ -40,6 +44,5 @@ public class ProductRepo {
                 "products=" + products +
                 '}';
     }
-
 
 }
