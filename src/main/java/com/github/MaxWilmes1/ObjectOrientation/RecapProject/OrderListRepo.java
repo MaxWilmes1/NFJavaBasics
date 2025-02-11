@@ -3,13 +3,12 @@ package com.github.MaxWilmes1.ObjectOrientation.RecapProject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderListRepo {
-    private List<Order> orders = new ArrayList<>();
+public class OrderListRepo implements OrderRepo {
+    private final List<Order> orders = new ArrayList<>();
 
     public List<Order> getOrders() {
         return orders;
     }
-
     public Order getOrderById(String id){
         for (Order order : orders) {
             if ( order.id().equals(id) ){
