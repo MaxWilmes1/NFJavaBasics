@@ -14,12 +14,12 @@ class BestellungListRepoTest {
     void getBestellungen() {
         //GIVEN
         BestellungListRepo repo = new BestellungListRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))), new BigDecimal("4.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)), new BigDecimal("13.8"));
         repo.addBestellung(b1);
         //WHEN
         List<Bestellung> actual = repo.getBestellungen();
         //THEN
-        List<Bestellung> expected = List.of(new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))), new BigDecimal("4.6")));
+        List<Bestellung> expected = List.of(new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)), new BigDecimal("13.8")));
         assertEquals(expected,actual);
     }
 
@@ -27,12 +27,12 @@ class BestellungListRepoTest {
     void getBestellungById() {
         //GIVEN
         BestellungListRepo repo = new BestellungListRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))), new BigDecimal("4.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)), new BigDecimal("13.8"));
         repo.addBestellung(b1);
         //WHEN
         Bestellung actual = repo.getBestellungById("1");
         //THEN
-        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))), new BigDecimal("4.6"));
+        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)), new BigDecimal("13.8"));
         assertEquals(actual,expected);
     }
 
@@ -40,12 +40,12 @@ class BestellungListRepoTest {
     void addBestellung() {
         //GIVEN
         BestellungListRepo repo = new BestellungListRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("4.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("13.8"));
         repo.addBestellung(b1);
         //WHEN
         Bestellung actual = repo.getBestellungById("1");
         //THEN
-        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("4.6"));
+        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("1.5"), 3), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("13.8"));
         assertEquals(actual,expected);
         assertEquals(repo.getBestellungById("1"),actual);
     }

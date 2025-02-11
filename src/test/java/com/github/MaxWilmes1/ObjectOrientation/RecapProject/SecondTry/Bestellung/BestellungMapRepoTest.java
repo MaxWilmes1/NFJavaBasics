@@ -14,12 +14,12 @@ class BestellungMapRepoTest {
     void getBestellungen() {
         //GIVEN
         BestellungMapRepo repo = new BestellungMapRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3"));
         repo.addBestellung(b1);
         //WHEN
         List<Bestellung> actual = repo.getBestellungen();
         //THEN
-        List<Bestellung> expected = List.of(new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6")));
+        List<Bestellung> expected = List.of(new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3")));
         assertEquals(expected,actual);
     }
 
@@ -27,12 +27,12 @@ class BestellungMapRepoTest {
     void getBestellungById() {
         //GIVEN
         BestellungMapRepo repo = new BestellungMapRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3"));
         repo.addBestellung(b1);
         //WHEN
         Bestellung actual = repo.getBestellungById("1");
         //THEN
-        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6"));
+        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3"));
         assertEquals(actual,expected);
     }
 
@@ -40,12 +40,12 @@ class BestellungMapRepoTest {
     void addBestellung() {
         //GIVEN
         BestellungMapRepo repo = new BestellungMapRepo();
-        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6"));
+        Bestellung b1 = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3"));
         repo.addBestellung(b1);
         //WHEN
         Bestellung actual = repo.getBestellungById("1");
         //THEN
-        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5")), new Produkt("2", "banana", new BigDecimal("3.1"))),new BigDecimal("7.6"));
+        Bestellung expected = new Bestellung("1", List.of(new Produkt("1", "apple", new BigDecimal("3.5"),4), new Produkt("2", "banana", new BigDecimal("3.1"),3)),new BigDecimal("23.3"));
         assertEquals(actual,expected);
         assertEquals(repo.getBestellungById("1"),actual);
     }

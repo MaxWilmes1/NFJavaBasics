@@ -19,6 +19,7 @@ public class EinkaufService {
     public Bestellung erstellBestellung(List<String> produktIds){
         List<Produkt> bestellteProdukte = new ArrayList<>();
         BigDecimal total = new BigDecimal("0");
+        BigDecimal valueOfOrder = new BigDecimal("0");
 
         for (String produktId : produktIds) {
             Produkt bestelltesProdukt = produktRepo.getProductById(produktId);
@@ -27,7 +28,8 @@ public class EinkaufService {
                 return null;
             }
             bestellteProdukte.add(produktRepo.getProductById(produktId));
-            total = total.add(bestelltesProdukt.price());
+            valueOfOrder = bestelltesProdukt.price().multiply(BigDecimal.valueOf(bestelltesProdukt.quantity()));
+            total = total.add(valueOfOrder);
         }
 
         Bestellung newBestellung = new Bestellung(UUID.randomUUID().toString(), bestellteProdukte, total);
