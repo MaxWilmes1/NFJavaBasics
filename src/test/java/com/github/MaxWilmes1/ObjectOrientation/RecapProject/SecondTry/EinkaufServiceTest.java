@@ -1,5 +1,8 @@
 package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry;
 
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung.Bestellung;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.Produkt;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.ProduktRepo;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -14,8 +17,8 @@ class EinkaufServiceTest {
         //GIVEN
         EinkaufService plattform = new EinkaufService();
         ProduktRepo meineWare = new ProduktRepo();
-        Produkt p1 = new Produkt("1", "banane");
-        Produkt p2 = new Produkt("2", "apple");
+        Produkt p1 = new Produkt("1", "banane", 4.1);
+        Produkt p2 = new Produkt("2", "apple", 4.1);
         meineWare.addProduct(p1);
         meineWare.addProduct(p2);
         plattform.setProduktRepo(meineWare);
@@ -27,7 +30,7 @@ class EinkaufServiceTest {
         //WHEN
         Bestellung actual = plattform.erstellBestellung(bestellteProdukte);
         //THEN
-        Bestellung expected = new Bestellung("-1", List.of(new Produkt("1", "banane"), new Produkt("2", "apple")));
+        Bestellung expected = new Bestellung("-1", List.of(new Produkt("1", "banane", 4.1), new Produkt("2", "apple", 4.1)));
         assertEquals(actual.bestellteProdukte(),expected.bestellteProdukte());
     }
     @Test
@@ -35,8 +38,8 @@ class EinkaufServiceTest {
         //GIVEN
         EinkaufService plattform = new EinkaufService();
         ProduktRepo meineWare = new ProduktRepo();
-        Produkt p1 = new Produkt("1", "banane");
-        Produkt p2 = new Produkt("2", "apple");
+        Produkt p1 = new Produkt("1", "banane", 4.1);
+        Produkt p2 = new Produkt("2", "apple", 4.1);
         meineWare.addProduct(p1);
         meineWare.addProduct(p2);
         plattform.setProduktRepo(meineWare);

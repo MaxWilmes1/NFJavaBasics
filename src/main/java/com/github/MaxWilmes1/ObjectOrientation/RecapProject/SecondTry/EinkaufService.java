@@ -1,13 +1,19 @@
 package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry;
 
-import javax.lang.model.element.NestingKind;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung.Bestellung;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung.BestellungListRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung.BestellungMapRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung.BestellungRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.Produkt;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt.ProduktRepo;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class EinkaufService {
     private ProduktRepo produktRepo = new ProduktRepo();
-    private BestellungListRepo bestellungListRepo = new BestellungListRepo();
+    private BestellungRepo bestellungRepo = new BestellungMapRepo();
 
     public Bestellung erstellBestellung(List<String> produktIds){
         List<Produkt> bestellteProdukte = new ArrayList<>();
@@ -22,16 +28,16 @@ public class EinkaufService {
         }
 
         Bestellung newBestellung = new Bestellung(UUID.randomUUID().toString(), bestellteProdukte);
-        bestellungListRepo.addBestellung(newBestellung);
+        bestellungRepo.addBestellung(newBestellung);
         return newBestellung;
     }
 
-    public BestellungListRepo getBestellungListRepo() {
-        return bestellungListRepo;
+    public BestellungRepo getBestellungRepo() {
+        return bestellungRepo;
     }
 
-    public void setBestellungListRepo(BestellungListRepo bestellungListRepo) {
-        this.bestellungListRepo = bestellungListRepo;
+    public void setBestellungListRepo(BestellungRepo bestellungRepo) {
+        this.bestellungRepo = bestellungRepo;
     }
 
     public ProduktRepo getProduktRepo() {

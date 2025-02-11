@@ -1,4 +1,4 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Produkt;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.SecondTry.Bestellung;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BestellungListRepo {
+public class BestellungListRepo implements BestellungRepo {
     private List<Bestellung> bestellungen;
 
     public BestellungListRepo() {
