@@ -2,6 +2,7 @@ package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public class ShopService {
@@ -13,15 +14,15 @@ public class ShopService {
         List<Product> orderedProducts = new ArrayList<>();
 
         for (String productId : productIds) {
-            Product productToOrder = productRepo.getProductById(productId);
-            if ( productToOrder == null ){
+            Optional<Product> productToOrder = productRepo.getProductById(productId);
+            if ( productToOrder.isEmpty() ){
                 System.out.println("Product with id "+ productId + " cant be ordered!");
                 return null;
             }
-            orderedProducts.add(productToOrder);
+            orderedProducts.add(productToOrder.get());
         }
 
-        Order newOrder = new Order(UUID.randomUUID().toString(), orderedProducts);
+        Order newOrder = new Order(UUID.randomUUID().toString(), orderedProducts, OrderStatus.DONE);
         return orderRepo.addOrder(newOrder);
     }
 

@@ -24,12 +24,12 @@ class OrderMapRepoTest {
     void getOrderbyId() {
         //GIVEN
         OrderMapRepo orders = new OrderMapRepo();
-        Order o1 = new Order("1", new ArrayList<>());
+        Order o1 = new Order("1", new ArrayList<>(),OrderStatus.IN_PROGRESS);
         //WHEN
         orders.addOrder(o1);
         Order actual = orders.getOrderById("1");
         //THEN
-        Order expected = new Order("1", new ArrayList<>());
+        Order expected = new Order("1", new ArrayList<>(),OrderStatus.IN_PROGRESS);
         assertEquals(actual,expected);
     }
 
@@ -38,14 +38,14 @@ class OrderMapRepoTest {
         //GIVEN
         OrderMapRepo orders = new OrderMapRepo();
         Product product = new Product("1", "Apfel");
-        Order newOrder = new Order("1", List.of(product));
+        Order newOrder = new Order("1", List.of(product),OrderStatus.IN_PROGRESS);
 
         //WHEN
         Order actual = orders.addOrder(newOrder);
 
         //THEN
         Product product1 = new Product("1", "Apfel");
-        Order expected = new Order("1", List.of(product1));
+        Order expected = new Order("1", List.of(product1),OrderStatus.IN_PROGRESS);
         assertEquals(actual, expected);
         assertEquals(orders.getOrderById("1"), expected);
     }

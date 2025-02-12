@@ -15,7 +15,7 @@ class ShopServiceTest {
         //WHEN
         Order actual = shopService.addOrder(List.of("1"));
         //THEN
-        Order expected = new Order("-1", List.of(new Product("1", "apple")));
+        Order expected = new Order("-1", List.of(new Product("1", "apple")),OrderStatus.IN_PROGRESS);
         assertEquals(actual.products(),expected.products());
     }
     @Test
