@@ -56,4 +56,13 @@ public class PersonRepository {
         return Optional.empty();
     }
 
+    public List<Person> getPersonsByWeekday(DaysOfWeek dayOfWeek) {
+        List<Person> result = new ArrayList<>();
+        for (Person person : persons.values()) {
+            if (person.favoriteDay().equals(dayOfWeek)) {
+                result.add(person);
+            }
+        }
+        return result;
+    }
 }

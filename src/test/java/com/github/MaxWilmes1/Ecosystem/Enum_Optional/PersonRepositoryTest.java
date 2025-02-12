@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -61,5 +63,15 @@ class PersonRepositoryTest {
         //THEN
         Optional<Person> expected = Optional.of( new Person("100", "max", DaysOfWeek.FRIDAY, Gender.MALE));
         assertEquals(expected,actual);
+    }
+
+    @Test
+    void getPersonsByWeekday(){
+        //WHEN
+        List<Person> actual = zuhause.getPersonsByWeekday(DaysOfWeek.MONDAY);
+        //THEN
+        Person expectedPerson = new Person("102", "Diversity", DaysOfWeek.MONDAY, Gender.DIVERSE);
+        List<Person> expected = new ArrayList<>(List.of(expectedPerson));
+        assertEquals(expected, actual);
     }
 }
