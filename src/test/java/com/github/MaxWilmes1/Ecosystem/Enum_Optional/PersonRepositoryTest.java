@@ -49,8 +49,17 @@ class PersonRepositoryTest {
         int expectedMale = 1;
         int expectedFemale = 1;
         int expectedDiverse = 1;
-        Assertions.assertEquals(expectedFemale,actual.get(Gender.FEMALE));
-        Assertions.assertEquals(expectedMale,actual.get(Gender.MALE));
-        Assertions.assertEquals(expectedDiverse,actual.get(Gender.DIVERSE));
+        assertEquals(expectedFemale,actual.get(Gender.FEMALE));
+        assertEquals(expectedMale,actual.get(Gender.MALE));
+        assertEquals(expectedDiverse,actual.get(Gender.DIVERSE));
+    }
+
+    @Test
+    void getPersonByName(){
+        //WHEN
+        Optional<Person> actual = zuhause.getPersonByName("max");
+        //THEN
+        Optional<Person> expected = Optional.of( new Person("100", "max", DaysOfWeek.FRIDAY, Gender.MALE));
+        assertEquals(expected,actual);
     }
 }

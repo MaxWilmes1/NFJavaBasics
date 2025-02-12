@@ -26,12 +26,11 @@ public class PersonRepository {
     }
 
     public Map<Gender, Integer> countPersonsByGender() {
-        List<Person> personsList = new ArrayList<>(persons.values());
         Integer maleCount = 0;
         Integer femaleCount = 0;
         Integer diverseCount = 0;
 
-        for (Person person : personsList) {
+        for (Person person : persons.values()) {
              if ( person.gender() == Gender.MALE ){
                  maleCount++;
             } else if (person.gender() == Gender.FEMALE) {
@@ -47,4 +46,14 @@ public class PersonRepository {
         System.out.println(result);
         return result;
     }
+
+    public Optional<Person> getPersonByName(String name){
+        for (Person person : persons.values()) {
+            if (person.name().equals(name)){
+             return Optional.of(person);
+            }
+        }
+        return Optional.empty();
+    }
+
 }
