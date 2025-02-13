@@ -1,4 +1,4 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage;
 
 import java.util.List;
 

@@ -1,14 +1,8 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order;
-
-
-import lombok.Data;
-import lombok.Getter;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Getter
-@Data
 public class OrderListRepo implements OrderRepo {
     private final List<Order> orders = new ArrayList<>();
 

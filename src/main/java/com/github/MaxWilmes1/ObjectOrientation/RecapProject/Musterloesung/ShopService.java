@@ -1,11 +1,11 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung;
 
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.Order;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderMapRepo;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderRepo;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderStatus;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.Product;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.ProductRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.Order;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.OrderMapRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.OrderRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.OrderStatus;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.Product;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.ProductRepo;
 
 import java.util.ArrayList;
 import java.util.List;

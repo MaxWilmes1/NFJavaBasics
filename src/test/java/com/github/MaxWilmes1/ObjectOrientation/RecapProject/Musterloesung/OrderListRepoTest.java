@@ -1,9 +1,9 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung;
 
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.Order;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderListRepo;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderStatus;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.Product;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.Order;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.OrderListRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.OrderPackage.OrderStatus;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.Product;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

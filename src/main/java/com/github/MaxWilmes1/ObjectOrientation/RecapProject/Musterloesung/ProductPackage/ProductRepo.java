@@ -1,13 +1,10 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product;
-
-import lombok.Builder;
-import lombok.Data;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Data
+
 public class ProductRepo {
     private final List<Product> products;
 

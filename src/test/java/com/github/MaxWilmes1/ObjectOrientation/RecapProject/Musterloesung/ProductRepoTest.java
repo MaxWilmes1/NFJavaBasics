@@ -1,7 +1,7 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung;
 
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.Product;
-import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.ProductRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.Product;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.ProductRepo;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
