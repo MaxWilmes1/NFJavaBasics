@@ -1,5 +1,9 @@
 package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
 
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.Order;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderMapRepo;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order.OrderStatus;
+import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Product.Product;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -24,7 +28,7 @@ class OrderMapRepoTest {
     void getOrderbyId() {
         //GIVEN
         OrderMapRepo orders = new OrderMapRepo();
-        Order o1 = new Order("1", new ArrayList<>(),OrderStatus.IN_PROGRESS);
+        Order o1 = new Order("1", new ArrayList<>(), OrderStatus.IN_PROGRESS);
         //WHEN
         orders.addOrder(o1);
         Order actual = orders.getOrderById("1");

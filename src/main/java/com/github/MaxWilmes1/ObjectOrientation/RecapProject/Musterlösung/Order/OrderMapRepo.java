@@ -1,10 +1,14 @@
-package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung;
+package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterlösung.Order;
+
+import lombok.Data;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+@Getter
+@Data
 public class OrderMapRepo implements OrderRepo{
     private final Map<String, Order> orders = new HashMap<>();
 
