@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Stream {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(List.of(1,16,3,4,5,6,7,56,9,10,11,12,105,14,15,31,17,18,19,20));
+        List<Integer> numbers = new ArrayList<>(List.of(1,16,3,4,5,42,7,56,9,10,11,12,105,14,15,31,17,18,19,20));
 
         numbers.stream()
                 .filter(number -> number%2 == 0)
