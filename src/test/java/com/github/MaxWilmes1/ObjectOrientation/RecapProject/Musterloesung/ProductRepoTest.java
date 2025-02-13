@@ -2,6 +2,8 @@ package com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung;
 
 import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.Product;
 import com.github.MaxWilmes1.ObjectOrientation.RecapProject.Musterloesung.ProductPackage.ProductRepo;
+import lombok.Builder;
+import lombok.With;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -31,7 +33,12 @@ class ProductRepoTest {
         //WHEN
         Optional<Product> actual = repo.getProductById("1");
         //THEN
-        Optional<Product> expected = Optional.of(new Product("1", "apple"));
+        Optional<Product> expectedOld = Optional.of(Product.builder()
+                .id("1")
+//                .name("apple")
+                .build());
+        Optional<Product> expected = Optional.of(expectedOld.get().withName("apple"));
+
         assertEquals(expected, actual);
     }
 
