@@ -31,11 +31,11 @@ class ProductRepoTest {
         //WHEN
         Optional<Product> actual = repo.getProductById("1");
         //THEN
-        Optional<Product> expected = Optional.of(new Product("1", "apple"));
-        Optional<Product> test = Optional.of(Product.builder()
+//        Optional<Product> expected = Optional.of(new Product("1", "apple"));
+        Optional<Product> expected1 = Optional.of(Product.builder()
                 .id("1")
                 .build());
-        System.out.println(test);
+        Optional<Product> expected = Optional.of(expected1.get().withName("apple"));
         assertEquals(expected, actual);
     }
 
