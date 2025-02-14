@@ -1,11 +1,10 @@
 package com.github.MaxWilmes1.Ecosystem.Lombok;
 
+import com.github.MaxWilmes1.Ecosystem.Stream.Challange.Stream;
 import lombok.Builder;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Builder
 public record University(
@@ -15,38 +14,36 @@ public record University(
 ) {
 
     public double calculateAverageCourseGrade(Course course){
-        double sum = 0;
-        double courseSize = course.getStudents().size();
-        System.out.println("Course size: "+ courseSize);
-        for (Student student : course.getStudents()) {
-            sum += student.getGrade();
-            System.out.println("Student: "+student+" , Grade: "+student.getGrade());
-        }
-        return sum/courseSize;
+        List<Student> students = course.getStudents();
+        double sum = students.stream()
+                .peek(student -> System.out.println("Student: " + student + ", Grade: " + student.getGrade()))
+                .mapToDouble(Student::getGrade)
+                .sum();
+
+        return sum/students.size();
     }
 
     public double calculateAverageGrade(University university){
-        double sum = 0;
-        double size = 0;
-        for (Course course : university.courses) {
-            for (Student student : course.getStudents()) {
-                System.out.println("Student: "+student+" , Grade: "+student.getGrade());
-                sum += student.getGrade();
-            }
-            size += course.getStudents().size();
-        }
+
+        double sum = university.courses.stream()
+                .flatMap(course -> course.getStudents().stream())
+                .mapToDouble(Student::getGrade)
+                .sum();
+        double size = university.courses.stream()
+                .mapToDouble(course -> course.getStudents().size())
+                .sum();
+
         return sum/size;
     }
 
     public Set<Student> getBestStudents(University university){
+
         Set<Student> bestStudents = new HashSet<>();
-        for (Course course : university.courses) {
-            for (Student student : course.getStudents()) {
-                if (student.getGrade() <= 2.0) {
-                    bestStudents.add(student);
-                }
-            }
-        }
+
+        university.courses.stream()
+        .flatMap(course -> course.getStudents().stream())
+        .filter(student -> student.getGrade() <= 2.0)
+        .forEach(bestStudents::add);
         return bestStudents;
     }
 }
