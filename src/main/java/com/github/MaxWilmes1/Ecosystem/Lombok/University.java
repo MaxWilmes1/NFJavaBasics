@@ -4,6 +4,7 @@ import com.github.MaxWilmes1.Ecosystem.Stream.Challange.Stream;
 import lombok.Builder;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Builder
 public record University(
@@ -36,14 +37,13 @@ public record University(
     }
 
     public Set<Student> getBestStudents(University university){
+
         Set<Student> bestStudents = new HashSet<>();
-        for (Course course : university.courses) {
-            for (Student student : course.getStudents()) {
-                if (student.getGrade() <= 2.0) {
-                    bestStudents.add(student);
-                }
-            }
-        }
+
+        university.courses.stream()
+        .flatMap(course -> course.getStudents().stream())
+        .filter(student -> student.getGrade() <= 2.0)
+        .forEach(bestStudents::add);
         return bestStudents;
     }
 }
