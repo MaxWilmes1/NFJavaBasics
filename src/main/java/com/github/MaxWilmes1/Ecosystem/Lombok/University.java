@@ -1,11 +1,9 @@
 package com.github.MaxWilmes1.Ecosystem.Lombok;
 
+import com.github.MaxWilmes1.Ecosystem.Stream.Challange.Stream;
 import lombok.Builder;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Builder
 public record University(
@@ -15,14 +13,13 @@ public record University(
 ) {
 
     public double calculateAverageCourseGrade(Course course){
-        double sum = 0;
-        double courseSize = course.getStudents().size();
-        System.out.println("Course size: "+ courseSize);
-        for (Student student : course.getStudents()) {
-            sum += student.getGrade();
-            System.out.println("Student: "+student+" , Grade: "+student.getGrade());
-        }
-        return sum/courseSize;
+        List<Student> students = course.getStudents();
+        double sum = students.stream()
+                .peek(student -> System.out.println("Student: " + student + ", Grade: " + student.getGrade()))
+                .mapToDouble(Student::getGrade)
+                .sum();
+
+        return sum/students.size();
     }
 
     public double calculateAverageGrade(University university){
