@@ -32,6 +32,10 @@ class ProductRepoTest {
         Optional<Product> actual = repo.getProductById("1");
         //THEN
         Optional<Product> expected = Optional.of(new Product("1", "apple"));
+        Optional<Product> test = Optional.of(Product.builder()
+                .id("1")
+                .build());
+        System.out.println(test);
         assertEquals(expected, actual);
     }
 
