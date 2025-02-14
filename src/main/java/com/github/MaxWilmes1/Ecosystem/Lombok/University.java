@@ -23,15 +23,15 @@ public record University(
     }
 
     public double calculateAverageGrade(University university){
-        double sum = 0;
-        double size = 0;
-        for (Course course : university.courses) {
-            for (Student student : course.getStudents()) {
-                System.out.println("Student: "+student+" , Grade: "+student.getGrade());
-                sum += student.getGrade();
-            }
-            size += course.getStudents().size();
-        }
+
+        double sum = university.courses.stream()
+                .flatMap(course -> course.getStudents().stream())
+                .mapToDouble(Student::getGrade)
+                .sum();
+        double size = university.courses.stream()
+                .mapToDouble(course -> course.getStudents().size())
+                .sum();
+
         return sum/size;
     }
 
