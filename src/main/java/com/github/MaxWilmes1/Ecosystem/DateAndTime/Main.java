@@ -2,6 +2,7 @@ package com.github.MaxWilmes1.Ecosystem.DateAndTime;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
@@ -33,5 +34,18 @@ public class Main {
         long difference = ChronoUnit.DAYS.between(localDateTime, localDateTimePlus2Weeks2);
         System.out.println(difference);
 
+        // Bonus
+
+        Animal mice = Animal.builder()
+                .name("Jerry")
+                .birthday(LocalDate.of(1994, 7, 26))
+                .build();
+
+        // manuell
+        System.out.println(mice);
+        System.out.println(ChronoUnit.DAYS.between(LocalDate.now(), LocalDate.of(2025, 7, 26)));
+
+        // with method n class animal
+        System.out.println(mice.daysUntilNextBirthday());
     }
 }
